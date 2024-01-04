@@ -1,9 +1,9 @@
-const fs = require("fs").promises;
+const fs = require("fs");
 
 const readFile = async (file) => {
   let fileData;
   try {
-    fileData = await fs.readFile(file, { encoding: "utf-8" });
+    fileData = await fs.promises.readFile(file, { encoding: "utf-8" });
   } catch (error) {
     throw new Error("Błąd odczytu pliku");
   }
